@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="projectBuild" default="junit">
+	<target name="WSDL">
+		<exec executable="C:\Program Files\Java\jdk1.7.0_45\bin\wsimport">
+			<arg value="-verbose" />
+			<arg value="-keep" />
+			<arg value="-d" />
+			<arg value="C:\Users\babak\Desktop\wisdl" />
+			<arg value="-s" />
+			<arg value="C:\Users\babak\Desktop\wisdl\src\gen" />
+			<arg value="http://localhost:8081/WebService_proj/?wsdl" />
+		</exec>
+	</target>
+	<target name="clean">
+		<delete dir="reports" />
+		<delete dir="lib" />
+		<delete dir="output" />
+		<mkdir dir="lib" />
+		<mkdir dir="output" />
+		<mkdir dir="reports" />
+	</target>
+	<target name="prepLib" depends="clean">
+		<copy todir="lib">
+			<fileset dir="C:\Users\babak\Desktop\JEE Eclips\Apache TomCat\apache-tomcat-7.0.41\lib">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="C:\Users\babak\Desktop\Java Libraryies\Jaxb\jaxb-ri-2.2.7\lib">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="C:\Users\babak\Desktop\Java Libraryies\Jersy\jersy 1.8\jersey-archive-1.18\lib">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="C:\Users\babak\Desktop\Java Libraryies\Junit">
+				<include name="*.jar" />
+			</fileset>
+
+		</copy>
+
+	</target>
+	<target name="compile" depends="prepLib">
+		<javac destdir="output" srcdir="src">
+			<classpath>
+				<fileset dir="lib">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+		<jar destfile="output/exec.jar" basedir="src" />
+		<war destfile="output/exec.war" basedir="WebContent">
+		</war>
+	</target>
+	<target name="junit" depends="compile">
+
+		<junit printsummary="yes" haltonfailure="yes">
+			<classpath>
+				<pathelement location="output" />
+				<fileset dir="lib">
+					<include name="*.jar" />
+				</fileset>
+
+			</classpath>
+			<formatter type="xml" />
+			<batchtest fork="yes" todir="reports">
+				<fileset dir="src">
+					<include name="**/*Test.java" />
+
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+</project>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="compile">
+	<path id="catalina-ant-classpath">
+		<fileset dir="C:\Users\babak\Desktop\JEE Eclips\Apache TomCat\apache-tomcat-7.0.41\lib">
+			<include name="*.jar" />
+			<include name="catalina-ant.jar" />
+			<include name="tomcat-coyote.jar" />
+			<include name="tomcat-util.jar" />
+			<include name="tomcat-juli.jar" />
+		</fileset>
+	</path>
+	<taskdef name="catalina-deploy" classname="org.apache.catalina.ant.DeployTask" classpathref="catalina-ant-classpath" />
+	<target name="clean">
+		<delete dir="lib" />
+		<delete dir="output" />
+		<mkdir dir="lib" />
+		<mkdir dir="output" />
+
+	</target>
+
+	<target name="preplib" depends="clean">
+		<copy todir="lib">
+			<fileset dir="C:\Users\babak\Desktop\Java Libraryies\Eclipslink\eclipselink\jlib\jpa">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="C:\Users\babak\Desktop\JEE Eclips\Apache TomCat\apache-tomcat-7.0.41\lib">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="C:\Users\babak\Desktop\Java Libraryies\Eclipslink\eclipselink\jlib">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="C:\Users\babak\Desktop\cmpe\Java Full Package\java -all\mysql-jdbc-req">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+
+	</target>
+
+	<target name="compile" depends="preplib">
+		<javac destdir="output" srcdir="gen">
+			<classpath>
+				<fileset dir="lib">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+		<javac destdir="output" srcdir="src">
+			<classpath>
+				<fileset dir="lib">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+
+
+		<jar destfile="output/exec.jar" basedir="src" />
+		<war destfile="output/exec.war" basedir="WebContent" />
+
+
+	</target>
+	<target name="deploy-war">
+		<catalina-deploy url="http://localhost:8080/manager" username="tomcat" password="tomcat" path="/WebSerivce_Proj/WebContent/WEB-INF/web.xml" war="C:\Users\babak\Documents\Eclips\WebSerivce_Proj\output\exec.war">
+		</catalina-deploy>
+
+
+
+
+	</target>
+</project>

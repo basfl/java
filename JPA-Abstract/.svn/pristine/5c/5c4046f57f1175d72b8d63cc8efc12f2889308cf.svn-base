@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Jpa/apache-openjpa-2.2.2-binary.zip"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/com.sun.tools.xjc_2.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/com.sun.xml.bind_2.2.0.v201004141950.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/commonj.sdo_2.1.1.v201112051852.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/eclipselink.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/hibernate-jpa-2.1-api-1.0.0.Draft-6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/javax.activation_1.1.0.v201108011116.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/javax.mail_1.4.0.v201005080615.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/javax.persistence.source_2.1.0.v201304241213.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/javax.persistence_2.1.0.v201304241213.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/javax.xml.bind_2.2.0.v201105210648.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/javax.xml.stream_1.0.1.v201004272200.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/org.eclipse.persistence.jpa.modelgen.source_2.5.1.v20130918-f2b9fc5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/org.eclipse.persistence.jpa.modelgen_2.5.1.v20130918-f2b9fc5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/org.eclipse.persistence.jpars.source_2.5.1.v20130918-f2b9fc5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/babak/Desktop/Java Libraryies/Eclipslink/Temp jar/org.eclipse.persistence.jpars_2.5.1.v20130918-f2b9fc5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

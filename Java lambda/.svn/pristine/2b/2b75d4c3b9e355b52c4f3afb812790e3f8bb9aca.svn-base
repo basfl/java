@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="proj" default="init">
+	<target name="clean">
+		<echo message="clean" />
+		<delete dir="compiled" />
+		<delete dir="output" />
+	</target>
+	<target name="setup" depends="clean">
+		<echo message="setup" />
+		<mkdir dir="compiled" />
+		<mkdir dir="output" />
+	</target>
+	<target name="init" depends="setup">
+		<echo message="init" />
+		<javac srcdir="src" destdir="compiled" />
+		<jar destfile="output/exec.jar" basedir="compiled">
+			<manifest>
+				<attribute name="Main-Class" value="com.Lambda" />
+			</manifest>
+		</jar>
+	</target>
+</project>

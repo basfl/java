@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="proj" default="exec">
+	<target name="clean">
+		<echo message="clean" />
+		<delete dir="output" />
+		<delete dir="compiled" />
+	</target>
+	<target name="make" depends="clean">
+		<echo message="make" />
+		<mkdir dir="output" />
+		<mkdir dir="compiled" />
+	</target>
+	<target name="exec" depends="make">
+		<echo message="exec" />
+		<javac srcdir="src" destdir="compiled" />
+		<jar destfile="output/exec.jar" basedir="compiled">
+			<manifest>
+				<attribute name="Main-Class" value="com.PropertiesImpl" />
+				
+			</manifest>
+		</jar>
+	</target>
+</project>
